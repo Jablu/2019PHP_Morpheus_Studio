@@ -1,0 +1,87 @@
+body{
+  background-color:#efefef;
+  font-family: 'Abel', sans-serif;
+  margin: 0px;
+}
+form{
+}
+h1{
+  font-weight: 500;
+  font-family: 'Abel', sans-serif;
+}
+input{
+  min-width: 95%;
+  margin: 2px;
+  padding: 2px;
+  border: 1px solid  grey;
+  border-radius: 5px;
+  height: 24px;
+  margin-bottom: 10px;
+}
+input:focus{
+  outline: 0;
+  border: 2px solid  grey;
+}
+button{
+  height: 35px;
+  min-width: 140px;
+  margin: 5px;
+  border: none;
+  background-color: #3422ae;
+  color: #fff;
+  float: right;
+  margin-right: 2.5%;
+  border-radius: 5px;
+  box-shadow: 3px 0px 6px 0px rgba(0,0,0,0.75);
+}
+button:focus{
+  outline: 0;
+  border: 2px solid  #110000;
+}
+.LeftPanel{
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  width: 20%;
+  height: 97vh;
+  padding: 20px;
+  float: left;
+  padding-bottom: 0px;
+  box-shadow: 3px 0px 6px 0px rgba(0,0,0,0.75);
+}
+.ConfirmText{
+  background-color: #111;
+  bottom: 50px;
+  left: 40%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 3px 0px 6px 0px rgba(0,0,0,0.75);
+  width: 20%;
+  padding: 10px;
+  margin: 0px auto;
+  float: inherit;
+  position: absolute;
+  border-radius: 5px;
+  font-family: 'Barlow', sans-serif;
+}
+.RightPanel{
+  margin-top: 20px;
+  background-color: #fff;
+  float: left;
+  margin-left: 25px;
+  width: 73%;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Barlow', sans-serif;
+
+}
+/*font-family: 'Germania One', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Abel', sans-serif;
+font-family: 'Barlow', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Barlow|Dosis|Germania+One|Lobster|Open+Sans|Quicksand|Roboto|Source+Sans+Pro');
