@@ -3,13 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="theme1.css">
   <script src="jquery-3.3.1.min.js"></script>
-  <script>
-    function SayHi(a){
-      alert("Hi from "+a);
-      //$(".RightPanelTable").hide();
-
-    }
-  </script>
+  
 </head>
 <body>
 <div class="LeftPanel">
@@ -30,6 +24,10 @@
   <button type="submit" name="buttonclick" value="Submit">Submit</button>
 </form>
 </div>
+
+<?php
+  include 'retrivedata.php';
+ ?>
 
 <!--<div class="RightPanel">
   <table class="RightPanelTable">
@@ -55,7 +53,7 @@
 
 <?php
   include 'functions.php';
-  
+
   if(array_key_exists('buttonclick',$_POST)){
     $employee_data = array();
     $employee_data['fname'] = $_POST['firstname'];
@@ -65,7 +63,7 @@
     $employee_data['birth'] = $_POST['dob'];
     $employee_data['salary'] = $_POST['salary'];
     AddEmployee($employee_data);
-    FetchEmployee();
+    header("location: index.php");
     exit();
   }
 ?>

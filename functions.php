@@ -2,7 +2,6 @@
 function AddEmployee($employee_data)
 {
   include 'db_constants.php';
-  $dbname = "morpheus_studio";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,7 +27,6 @@ function AddEmployee($employee_data)
     if(!empty($employee_data['fname'])){
       if ($conn->query($sql) === TRUE) {
           echo "<p class='ConfirmText'>New record created successfully</p>";
-
           } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -40,10 +38,9 @@ function AddEmployee($employee_data)
   $conn->close();
 }
 
-function FetchEmployee()
+/*function FetchEmployee()
 {
   include 'db_constants.php';
-  $dbname = "morpheus_studio";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -89,11 +86,11 @@ function FetchEmployee()
     } else {
     echo "0 results";
   }
-  echo "</table>";
+  echo "</table></div>";
   $conn->close();
 }
 
 function deleteEmployee(){
   echo "delete employee php hi";
-}
+}*/
 ?>
