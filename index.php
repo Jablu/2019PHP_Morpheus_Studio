@@ -2,6 +2,14 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="theme1.css">
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    function SayHi(a){
+      alert("Hi from "+a);
+      //$(".RightPanelTable").hide();
+      
+    }
+  </script>
 </head>
 <body>
 <div class="LeftPanel">
@@ -23,9 +31,27 @@
 </form>
 </div>
 
-<div class="RightPanel">
-  dmkmvfe
-</div>
+<!--<div class="RightPanel">
+  <table class="RightPanelTable">
+	<tr>
+		<th>PSID</th>
+		<th>Name</th>
+		<th>Email Id</th>
+		<th>Phone Number</th>
+		<th>Salary</th>
+		<th>Date of Birth</th>
+		<th>Actions </th>
+	</tr>
+  <tr>
+		<td>28193</td>
+		<td>Abinash Mishra</td>
+		<td>mejablu@gmail.com</td>
+		<td>8895294063</td>
+		<td>27500</td>
+		<td>18-13-1994</td>
+	</tr>
+  </table>
+</div>-->
 
 <?php
   include 'functions.php';
@@ -38,6 +64,8 @@
     $employee_data['birth'] = $_POST['dob'];
     $employee_data['salary'] = $_POST['salary'];
     AddEmployee($employee_data);
+    FetchEmployee();
+    exit();
   }
 ?>
 </body>

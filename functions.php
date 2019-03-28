@@ -34,9 +34,63 @@ function AddEmployee($employee_data)
         }
     }
     else {
-        echo "<p class='ConfirmText'>No data provided.</p>";
+        //echo "<p class='ConfirmText'>No data provided.</p>";
     }
   }
   $conn->close();
+}
+
+function FetchEmployee()
+{
+  include 'db_constants.php';
+  $dbname = "morpheus_studio";
+
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+
+  $sql = "SELECT * FROM employee";
+  $result = $conn->query($sql);
+
+  echo "<div class='RightPanel'>
+    <table class='RightPanelTable'>
+  	<tr>
+  		<th>PSID</th>
+  		<th>Name</th>
+  		<th>Email Id</th>
+  		<th>Phone Number</th>
+  		<th>Salary</th>
+  		<th>Date of Birth</th>
+  		<th>Actions </th>
+  	</tr>";
+
+  if ($result->num_rows > 0) {
+    // output data of each row
+    $tmpCount = 1;
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>
+                  <td>" . $row["psid"]. "</td>
+                  <td>" . $row["first_name"]. " " . $row["last_name"]. "</td>
+                  <td>" . $row["email"]. "</td>
+                  <td>" . $row["phone"]. "</td>
+                  <td>" . $row["salary"]. "</td>
+                  <td>" . $row["dob"]. "</td>
+                  <td> <img src = 'delete.png' class='rowIcon' onclick='SayHi(".$tmpCount.")'/> </td>
+              </tr>";
+          $tmpCount ++;
+    }
+    } else {
+    echo "0 results";
+  }
+  echo "</table>";
+  $conn->close();
+}
+
+function deleteEmployee(){
+  echo "delete employee php hi";
 }
 ?>
