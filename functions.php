@@ -59,13 +59,14 @@ function FetchEmployee()
   echo "<div class='RightPanel'>
     <table class='RightPanelTable'>
   	<tr>
+      <th colspan='2'></th>
   		<th>PSID</th>
   		<th>Name</th>
   		<th>Email Id</th>
   		<th>Phone Number</th>
   		<th>Salary</th>
   		<th>Date of Birth</th>
-  		<th>Actions </th>
+
   	</tr>";
 
   if ($result->num_rows > 0) {
@@ -73,13 +74,15 @@ function FetchEmployee()
     $tmpCount = 1;
     while($row = $result->fetch_assoc()) {
         echo "<tr>
+                  <td>   <input type='checkbox' class='myCheckBox'> </td>
+                  <td>  <img src = 'delete2.png' class='rowIcon' onclick='SayHi(".$tmpCount.")'/>
+                        <img src = 'save2.png' class='rowIcon' onclick='SayHi(".$tmpCount.")'/> </td>
                   <td>" . $row["psid"]. "</td>
                   <td>" . $row["first_name"]. " " . $row["last_name"]. "</td>
-                  <td>" . $row["email"]. "</td>
-                  <td>" . $row["phone"]. "</td>
-                  <td>" . $row["salary"]. "</td>
+                  <td contenteditable='true'>" . $row["email"]. "</td>
+                  <td contenteditable='true'>" . $row["phone"]. "</td>
+                  <td contenteditable='true'>" . $row["salary"]. "</td>
                   <td>" . $row["dob"]. "</td>
-                  <td> <img src = 'delete.png' class='rowIcon' onclick='SayHi(".$tmpCount.")'/> </td>
               </tr>";
           $tmpCount ++;
     }

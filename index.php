@@ -7,7 +7,7 @@
     function SayHi(a){
       alert("Hi from "+a);
       //$(".RightPanelTable").hide();
-      
+
     }
   </script>
 </head>
@@ -55,6 +55,7 @@
 
 <?php
   include 'functions.php';
+  
   if(array_key_exists('buttonclick',$_POST)){
     $employee_data = array();
     $employee_data['fname'] = $_POST['firstname'];
